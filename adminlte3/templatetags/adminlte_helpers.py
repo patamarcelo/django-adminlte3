@@ -19,7 +19,7 @@ def avatar_url(context, size=None, user=None):
     # TODO: Make behaviour configurable
     user = context['request'].user if user is None else user
     user_img = "/static/admin-lte/dist/img/avatar5.png"
-    if user:
+    if user.image:
         return user.image.url
     else:
         return user_img
